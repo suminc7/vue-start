@@ -1,0 +1,7 @@
+{
+  "unused": true,
+  "camelcase": true,
+  "indent"        : 4,
+  "esversion"     : 6         // {int} Specify the ECMAScript version to which the code must adhere.
+
+}
