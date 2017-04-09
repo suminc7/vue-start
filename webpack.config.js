@@ -4,6 +4,10 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 
+function resolve (dir) {
+    return path.join(__dirname, '.', dir);
+}
+console.log(config.staticRoot);
 module.exports = {
 	entry: {
         'vendor': 'babel-polyfill',
@@ -19,7 +23,8 @@ module.exports = {
 			{
 				test: /\.js$/,
 				loader: 'babel-loader',
-				exclude: /node_modules/
+				exclude: /node_modules/,
+                include: [resolve('src'), resolve('test')]
 			},
 			{
 				test: /\.json$/,
@@ -50,10 +55,10 @@ module.exports = {
 
 	},
     plugins: [
-        new ExtractTextPlugin("/styles/all.css"),
+        new ExtractTextPlugin("./styles/all.css"),
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor",
-            filename: "/js/vendor.js",
+            filename: "./js/vendor.js",
         })
     ],
 
@@ -75,12 +80,11 @@ module.exports = {
 		// 		prependPath: false
 		// 	}
 		// },
-		publicPath: '/js/'
+		publicPath: '/'
 	},
 
 	watch: true
 }
-
 
 
 if (process.env.NODE_ENV === 'production') {
