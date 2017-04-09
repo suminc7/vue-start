@@ -6,13 +6,13 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
 	entry: {
-        'commons': 'babel-polyfill',
+        'vendor': 'babel-polyfill',
         'main': './src/main.js'
 
 	},
 	output: {
 		path: config.staticRoot,
-		filename: '/js/main.js'
+		filename: './js/main.js'
 	},
 	module: {
 		rules: [
@@ -52,8 +52,8 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin("/styles/all.css"),
         new webpack.optimize.CommonsChunkPlugin({
-            name: "commons",
-            filename: "/js/commons.js",
+            name: "vendor",
+            filename: "/js/vendor.js",
         })
     ],
 
@@ -67,6 +67,7 @@ module.exports = {
 	devServer: {
 		hot: true,
 		port: 8080,
+        contentBase: path.resolve('dist'),
 		// proxy: {
 		// 	'**': {
 		// 		target: 'http://localhost:8000/',
