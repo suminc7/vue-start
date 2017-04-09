@@ -47,7 +47,6 @@ module.exports = {
                             use: 'css-loader?minimize&url=false!sass-loader',
                             fallback: 'vue-style-loader'
                         })
-						// scss: 'style-loader?singleton!css-loader?minimize&url=false!sass-loader'
 					}
 				}
 			}
