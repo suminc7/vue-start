@@ -2,6 +2,7 @@
     <div>
         Foo {{ $route.params.id }}
         <ul id="example-1">
+            1234
             <li v-for="item in items">
                 {{ item.message }}
             </li>

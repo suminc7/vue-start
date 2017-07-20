@@ -70,11 +70,11 @@ module.exports = {
 
 	devServer: {
 		hot: true,
-		port: 8080,
+		port: 8000,
         contentBase: path.resolve('dist'),
 		// proxy: {
 		// 	'**': {
-		// 		target: 'http://localhost:8000/',
+		// 		target: 'http://localhost:9090/',
 		// 		secure: false,
 		// 		prependPath: false
 		// 	}
