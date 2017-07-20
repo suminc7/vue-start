@@ -82,7 +82,7 @@ module.exports = {
 		publicPath: '/'
 	},
 
-	watch: true
+	watch: false
 }
 
 
